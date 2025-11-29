@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FNCRAV - Pelacak Keuangan</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>FNCRAV</h1>
+      <div class="header-right">
+        <span id="current-date"></span>
+        <img src="assets/profil.jpg" alt="Profil" class="profil">
+      </div>
+    </header>
+
+    <!-- Total Saldo -->
+    <div class="card saldo">
+      <h2>Total Saldo</h2>
+      <p id="total-saldo">Rp 0</p>
+    </div>
+
+    <!-- Dasbor -->
+    <div class="dashboard">
+      <div class="card mini-card">
+        <h3>Pemasukan Bulan Ini</h3>
+        <p id="pemasukan-bulan">Rp 0</p>
+        <canvas id="linePemasukan"></canvas>
+      </div>
+      <div class="card mini-card">
+        <h3>Pengeluaran Bulan Ini</h3>
+        <p id="pengeluaran-bulan">Rp 0</p>
+        <canvas id="linePengeluaran"></canvas>
+      </div>
+      <div class="card mini-card">
+        <h3>Pendapatan vs Pengeluaran</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+      <button onclick="showSection('form')">Masukan Transaksi</button>
+      <button onclick="showSection('kelola')">Kelola Data</button>
+      <button onclick="showSection('laporan')">Laporan</button>
+    </div>
+
+    <!-- Konten -->
+    <div id="content">
+      <!-- Formulir Transaksi -->
+      <div id="form" class="section">
+        <h3>Masukan Transaksi</h3>
+        <form id="transactionForm">
+          <select id="type">
+            <option value="Pemasukan">Pemasukan</option>
+            <option value="Pengeluaran">Pengeluaran</option>
+          </select>
+          <input type="number" id="jumlah" placeholder="Jumlah" required>
+          <select id="kategori">
+            <option value="">Pilih Kategori</option>
+            <option>Makanan</option>
+            <option>Minuman</option>
+            <option>Transportasi</option>
+            <option>Belanja</option>
+            <option>Tagihan Kos</option>
+            <option>Kesehatan</option>
+            <option>Hiburan</option>
+            <option>KIP-k</option>
+            <option>Tabungan</option>
+            <option>Investasi</option>
+            <option>Lainnya</option>
+          </select>
+          <input type="text" id="keterangan" placeholder="Keterangan">
+          <input type="date" id="tanggal" required>
+          <button type="submit">Simpan</button>
+        </form>
+      </div>
+
+      <!-- Kelola Data -->
+      <div id="kelola" class="section">
+        <h3>Kelola Transaksi</h3>
+        <div id="transactionList"></div>
+      </div>
+
+      <!-- Laporan -->
+      <div id="laporan" class="section">
+        <h3>Laporan</h3>
+        <p>Fitur laporan harian/mingguan/bulanan/tahunan akan ditampilkan di sini.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

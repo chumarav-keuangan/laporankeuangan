@@ -1,0 +1,28 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #e0f7fa, #f3e5f5);
+  color: #333;
+}
+.container { max-width: 900px; margin: auto; padding: 20px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+header h1 { font-size: 2.5rem; color: #1E88E5; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.profil { width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+.card { background: #fff; padding: 20px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
+.saldo h2 { color: #555; }
+.saldo p { font-size: 2rem; color: #4caf50; font-weight: bold; }
+.dashboard { display: flex; gap: 20px; flex-wrap: wrap; }
+.mini-card { flex: 1; min-width: 250px; }
+.menu { display: flex; gap: 10px; margin-bottom: 20px; }
+.menu button { flex: 1; padding: 15px; border-radius: 15px; border: none; cursor: pointer; font-weight: bold; background: #BBDEFB; transition: 0.2s; }
+.menu button:hover { background: #90CAF9; }
+.section { display: none; }
+.section.active { display: block; }
+#transactionForm input, #transactionForm select, #transactionForm button {
+  display: block; width: 100%; margin-bottom: 10px; padding: 10px; border-radius: 10px; border: 1px solid #ccc;
+}
+#transactionForm button { background: #1E88E5; color: #fff; border: none; cursor: pointer; }
+#transactionList div { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+#transactionList div span { font-weight: bold; }
